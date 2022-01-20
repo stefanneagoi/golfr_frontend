@@ -11,7 +11,9 @@ const Layout = ({ children, home }) => {
       <header className="flex flex-row w-full px-10 py-2 shadow">
         <span className="h-8 items-center space-x-6">
           <span className="text-2xl">Golfr 🏌️</span>
-          <span className="text-xl">Home</span>
+          <Link href="/">
+            <a className="text-xl"> Home</a>
+          </Link>
         </span>
         <span className="h-8 items-center text-xl ml-auto">
           {username}
