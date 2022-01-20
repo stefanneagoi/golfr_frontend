@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { getUsername } from '../lib/userAuth'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, home }) => {
   const [ username, setUsername ] = useState('')
   useEffect(() => setUsername(getUsername()), [])
 
@@ -27,6 +27,13 @@ const Layout = ({ children }) => {
       <div className="px-10 py-2">
         {children}
       </div>
+      {!home && (
+        <div className="no-underline hover:underline ...">
+          <Link href="/">
+            <a>← Back to home</a>
+          </Link>
+        </div>
+      )}
     </>
   )
 }
