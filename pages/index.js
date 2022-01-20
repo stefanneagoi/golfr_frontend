@@ -7,7 +7,7 @@ const Home = () => {
   const { scores, error } = useScores()
 
   return (
-    <Layout>
+    <Layout home>
       <>
         {error ? (
           error
@@ -16,6 +16,7 @@ const Home = () => {
             <ScorePostWidget />
             {scores && scores.map(score => (
               <ScoreCard
+                home
                 key={score.id}
                 id={score.id}
                 totalScore={score.total_score}

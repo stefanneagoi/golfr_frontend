@@ -4,7 +4,7 @@ import useScorePost from '../lib/useScorePost'
 
 const TODAY = new Date().toISOString().slice(0, 10)
 
-const ScorePostWidget = () => {
+const ScorePostWidget = ({ id }) => {
   const [ open, setOpen ] = useState(false)
   const onClick = useCallback(
     () => setOpen(!open),
@@ -14,7 +14,7 @@ const ScorePostWidget = () => {
   const [ totalScore, setTotalScore ] = useState(80)
   const [ playedAt, setPlayedAt ] = useState(TODAY)
 
-  const { postScore } = useScorePost()
+  const { postScore } = useScorePost(id)
 
   const onSubmit = useCallback(
     e => {
